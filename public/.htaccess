@@ -1,0 +1,12 @@
+
+Options -Indexes
+
+RewriteEngine On
+
+# Jika file atau folder benar-benar ada,
+# biarkan Apache mengaksesnya langsung.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Selain itu, arahkan request ke index.php
+RewriteRule ^ index.php [QSA,L]
